@@ -1,6 +1,19 @@
 <div class="jumbotron bg-aqua text-center">
-    <h1 class="display-4">Corona Tracker Country wise</h1>
-    <p class="lead">All donated funds are managed transparently on OpenCollective and will be used solely for compensating work and expenses for contributors. Valor Software employees and contractors are not eligible to use these funds.</p>
+    <h1 class="display-4">Corona Tracker Country-wise</h1>
+
     <hr class="my-4">
-    <p>All donated funds are managed transparently on OpenCollective and will be used solely for compensating work and expenses for contributors. Valor Software employees and contractors are not eligible to use these funds.</p>
+    <div class="mx-auto">
+       <div class="form-group col-lg-5 mx-auto">
+          <label for="c">Select Country</label>
+          <select name="" class="form-control" id="c" #input (change)='updateValues(input.value)'>
+              <option value="{{con}}" *ngFor='let con of countries'>
+                   {{ con }}
+              </option>
+          </select>
+       </div>
+    </div>
+
+    <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalRecovered]='totalRecovered'
+    [totalActive]='totalActive' [totalDeaths]='totalDeaths'></app-dashboard-card>
+
 </div>
